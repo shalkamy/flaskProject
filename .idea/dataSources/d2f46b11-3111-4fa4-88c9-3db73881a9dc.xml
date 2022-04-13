@@ -1343,12 +1343,12 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="488" parent="165" name="name">
+    <column id="488" parent="165" name="id">
       <Position>1</Position>
-      <DataType>VARCHAR(80)|0s</DataType>
+      <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="489" parent="165" name="id">
+    <column id="489" parent="165" name="name">
       <Position>2</Position>
       <DataType>VARCHAR(50)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1358,47 +1358,40 @@
       <DataType>SMALLINT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="491" parent="165" name="sqlite_autoindex_user_1">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>name</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="492" parent="165">
-      <ColNames>name</ColNames>
+    <key id="491" parent="165">
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
-      <UnderlyingIndexName>sqlite_autoindex_user_1</UnderlyingIndexName>
     </key>
-    <column id="493" parent="166" name="id">
+    <column id="492" parent="166" name="id">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="494" parent="166" name="user_id">
+    <column id="493" parent="166" name="user_id">
       <Position>2</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="495" parent="166" name="transaction_id">
+    <column id="494" parent="166" name="transaction_id">
       <Position>3</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="496" parent="166" name="type">
+    <column id="495" parent="166" name="type">
       <Position>4</Position>
       <DataType>SMALLINT|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="497" parent="166">
+    <key id="496" parent="166">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="498" parent="166">
+    <foreign-key id="497" parent="166">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="499" parent="166">
+    <foreign-key id="498" parent="166">
       <ColNames>transaction_id</ColNames>
       <RefTableName>transaction</RefTableName>
       <RefColNames>id</RefColNames>

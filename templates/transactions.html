@@ -3,9 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        function submitForm(id){
+            document.getElementById("transaction_id").value = id;
+            document.getElementById("form").submit();
+        }
+    </script>
 </head>
 <body>
-<label for="id">id:</label><br>
-        <input type="text" id="id" name="id"><br>
+<form id="form" action="/transaction/accept" method="post">
+<input id="user_id" name="user_id" type="text" value="{{ items[0] }}" hidden>
+    <input id="transaction_id" name="transaction_id" type="text" hidden>
+<table>
+<tr>
+    <th>id</th>
+    <th>price</th>
+    <th>energyAmount</th>
+    <th>level</th>
+    <th>flexibility</th>
+    <th>creationTimestamp</th>
+    <th>transactionTimestamp</th>
+    <th>action</th>
+</tr>
+{% for item in items[1] %}
+  <tr>
+    <td>{{ item.id }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.energyAmount }}</td>
+      <td>{{ item.level }}</td>
+      <td>{{ item.flexibility }}</td>
+      <td>{{ item.creationTimestamp }}</td>
+      <td>{{ item.transactionTimestamp }}</td>
+  <td><button id="{{ item.id }}" onclick="submitForm(this.id)">accept</button></td>
+  </tr>
+{% endfor %}
+</table>
+</form>
 </body>
 </html>
